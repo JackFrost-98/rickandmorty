@@ -1,5 +1,6 @@
 .container {
   padding: 0 2rem;
+  background-color: rgb(37, 37, 37);
 }
 
 .main {
@@ -10,13 +11,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(37, 37, 37);
 }
 
 .footer {
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid black;
   justify-content: center;
   align-items: center;
 }
@@ -57,7 +59,7 @@
 }
 
 .code {
-  background: #fafafa;
+  background: rgb(20, 20, 20);
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -70,31 +72,41 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  width: 1500px;
 
   list-style: none;
   margin-left: 0;
   margin-top: 3rem;
   padding-left: 0;
+  color: white;
+
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .card {
   margin: 1rem;
-  padding: 1.5rem;
+  padding: 1.1rem;
   text-align: left;
-  color: inherit;
+  background-color: rgb(85, 84, 84);
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid rgb(141, 141, 141);
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 800px;
+  width: 650px;
 }
 
-.card:hover,
+/* .card:hover,
 .card:focus,
 .card:active {
   color: #0070f3;
   border-color: #0070f3;
+} */
+
+.hover:hover,
+.hover:focus,
+.hover:active{
+  color: rgb(160, 135, 22);
+  border-color: rgb(160, 135, 22);
 }
 
 .card h2 {

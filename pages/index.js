@@ -33,17 +33,6 @@ export default function  ComplexGrid({data}) {
   const { results = []} = data;
   console.log('data', data);
   return (
-
-    <Paper
-      sx={{
-        p: 2,
-        margin: 'auto',
-        maxWidth: '1000',
-        flexGrow: 1,
-        backgroundColor: grey,
-        
-      }}
-    >
       <div className={styles.container}>
       <Head>
         <title>Rick And Morty Next App</title>
@@ -62,20 +51,20 @@ export default function  ComplexGrid({data}) {
         </p>
         <ul className={styles.grid}>
         {results.map(result => {
-            const {id, name, image, status, location, origin, species, gender} = result;
+            const {id, name, image, status, location, origin, species, gender, url} = result;
             return(
-              <li key={ id } className={styles.card}>
-                <Grid container spacing={2}>
+              <li key={ id }  className={styles.card}>
+                <Grid container item xs={15} spacing={2}>
                   <Grid item>
-                    <ButtonBase sx={{ width: 128, height: 128 }}>
+                    <ButtonBase sx={{ width: 200, height: 200 }}>
                       <Img alt="complex" src={image}></Img>
                     </ButtonBase>
                   </Grid>
-                  <Grid item xs={12} sm container>
-                    <Grid item xs container direction="column" spacing={2}>
+                  <Grid item xs={15} sm container>
+                    <Grid item xs={15} container direction="column" spacing={2}>
                       <Grid item xs>
-                        <Typography gutterBottom variant="subtitle1" component="div">
-                        { name }
+                        <Typography gutterBottom variant="h2" style={{ fontSize:30}} className={styles.hover}>
+                        <a href={url} id>{ name }</a>
                         </Typography>
                         <Typography variant="body2" gutterBottom>
                           { status }
@@ -83,14 +72,14 @@ export default function  ComplexGrid({data}) {
                         <Typography variant="body2" color="text.secondary">
                           Last Known Location:
                         </Typography>
-                        <Typography variant="body2" gutterBottom>
-                          { location.name }
+                        <Typography variant="body2" gutterBottom className={styles.hover}>
+                          <a href={location.url}>{ location.name }</a>
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                          Species:
+                          First Seen in:
                         </Typography>
-                        <Typography variant="body2" gutterBottom>
-                          { species }
+                        <Typography variant="body2" gutterBottom className={styles.hover}>
+                          <a href={origin.url}>{ origin.name }</a>
                         </Typography>
                       </Grid>
                     </Grid>
@@ -123,8 +112,6 @@ export default function  ComplexGrid({data}) {
           </span>
         </a>
       </footer>
-    </div>
-    </Paper>
-    
+    </div>    
   )
 }
