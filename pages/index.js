@@ -62,7 +62,7 @@ export default function  ComplexGrid({data}) {
         </p>
         <ul className={styles.grid}>
         {results.map(result => {
-            const {id, name, image, status, lcoation, origin, species, gender} = result;
+            const {id, name, image, status, location, origin, species, gender} = result;
             return(
               <li key={ id } className={styles.card}>
                 <Grid container spacing={2}>
@@ -81,10 +81,10 @@ export default function  ComplexGrid({data}) {
                           { status }
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                          Gender:
+                          Last Known Location:
                         </Typography>
                         <Typography variant="body2" gutterBottom>
-                          { gender }
+                          { location.name }
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                           Species:
