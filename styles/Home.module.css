@@ -73,7 +73,7 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1500px;
-  min-width: 800;
+  min-width: 800px;
   width: 1500px;
 
   list-style: none;
@@ -94,7 +94,9 @@
   border: 1px solid rgb(141, 141, 141);
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
+  min-width: 300px;
   max-width: 650px;
+  position: relative;
 }
 
 /* .card:hover,
